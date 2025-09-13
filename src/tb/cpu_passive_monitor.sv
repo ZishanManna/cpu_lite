@@ -15,7 +15,7 @@ class cpu_passive_monitor extends uvm_monitor;
 
 	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
-		if(!uvm_config_db#(virtual cpu_interface)::get(this,"","vif",vif))
+		if(!uvm_config_db#(virtual cpu_interface)::get(this,"*","vif",vif))
 			`uvm_fatal("PASSIVE_MONITOR","VIF not set in passive monitor")	
 	endfunction
 
@@ -28,6 +28,8 @@ class cpu_passive_monitor extends uvm_monitor;
 			item.alu_result = vif.alu_result;
 			out2scr.write(item);
 			out2cov.write(item);
+		        `uvm_info("---PASSIVE_MONITOR---", $sformatf("Observed transaction: alu_result=%0h", item.alu_result), UVM_MEDIUM)
+
 		end
 	endtask
 

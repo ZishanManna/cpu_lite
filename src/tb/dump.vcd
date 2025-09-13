@@ -1,0 +1,1175 @@
+$date
+	Sat Sep 13 13:36:32 2025
+$end
+
+$version
+	Synopsys VCS version Q-2020.03-SP2-8
+$end
+
+$timescale
+	1ns
+$end
+
+$comment Csum: 1 6bf0c4bd8bf0ee55 $end
+
+
+$scope module $unit $end
+$upscope $end
+
+
+$scope module cpu_top $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+
+$scope begin unnamed$$_vcs_0 $end
+$upscope $end
+
+
+$scope begin unnamed$$_vcs_1 $end
+$upscope $end
+
+
+$scope begin unnamed$$_vcs_2 $end
+$upscope $end
+
+
+$scope module vif $end
+$var reg 1 # clk $end
+$var reg 1 $ pmWrEn $end
+$var reg 8 % instructionIn [7:0] $end
+$var reg 7 & pm_addr [6:0] $end
+$var reg 8 ' alu_result [7:0] $end
+$var reg 1 ( rst $end
+$upscope $end
+
+
+$scope module dut $end
+$var wire 1 ) clk $end
+$var wire 1 * rst $end
+$var wire 1 + pmWrEn $end
+$var wire 8 , instructionIn [7:0] $end
+$var wire 7 - pm_addr [6:0] $end
+$var wire 8 . alu_result [7:0] $end
+$var wire 7 / pointer [6:0] $end
+$var wire 32 0 instruction [31:0] $end
+$var wire 32 1 next_ins_w [31:0] $end
+$var wire 1 2 reg_wen_w $end
+$var wire 1 3 data_imm_sel_w $end
+$var wire 4 4 alu_op_w [3:0] $end
+$var wire 8 5 read_data1_w [7:0] $end
+$var wire 8 6 read_data2_w [7:0] $end
+$var wire 3 7 func3_out [2:0] $end
+$var wire 5 8 r_reg1_out [4:0] $end
+$var wire 5 9 r_reg2_out [4:0] $end
+$var wire 5 : wr_reg_dec_w [4:0] $end
+$var wire 7 ; func7_out [6:0] $end
+$var wire 7 < opcode_out [6:0] $end
+$var wire 7 = opcode_out_reg [6:0] $end
+$var wire 8 > immediate_data_dec_w [7:0] $end
+$var wire 8 ? alu_result_w [7:0] $end
+$var wire 1 @ reg_wen_wb_w $end
+$var wire 5 A wr_reg_wb_w [4:0] $end
+$var wire 8 B alu_result_wb_w [7:0] $end
+$var wire 8 C mux_out_w [7:0] $end
+$var wire 1 D op1_select $end
+$var wire 1 E op2_select $end
+$var wire 8 F mux_out_op1 [7:0] $end
+$var wire 8 G mux_out_op2 [7:0] $end
+$var wire 8 H output_data [7:0] $end
+$var wire 8 . alu_reset_output [7:0] $end
+
+$scope module program_memory_inst1 $end
+$var wire 1 ) clk $end
+$var wire 1 + wrEn $end
+$var wire 7 / readAdd [6:0] $end
+$var wire 7 - writeAdd [6:0] $end
+$var wire 8 , writeData [7:0] $end
+$var wire 32 0 instruction [31:0] $end
+$upscope $end
+
+
+$scope module program_counter_inst2 $end
+$var wire 1 ) clk $end
+$var wire 1 * rst $end
+$var wire 1 I condition $end
+$var wire 3 J function_3 [2:0] $end
+$var wire 7 K pc_scr [6:0] $end
+$var wire 7 L jump_add [6:0] $end
+$var reg 7 / current_ins_add [6:0] $end
+$var wire 7 M next_ins_add [6:0] $end
+$upscope $end
+
+
+$scope module fetch_stage_inst3 $end
+$var wire 1 ) clk $end
+$var wire 32 0 current_ins [31:0] $end
+$var reg 32 1 next_ins [31:0] $end
+$upscope $end
+
+
+$scope module decode_stage_inst $end
+$var wire 1 ) clk $end
+$var wire 3 N func3 [2:0] $end
+$var wire 5 O r_reg1 [4:0] $end
+$var wire 5 P r_reg2 [4:0] $end
+$var wire 5 Q wr_reg [4:0] $end
+$var wire 7 R func7 [6:0] $end
+$var wire 7 S opcode [6:0] $end
+$var wire 8 T immediate_data [7:0] $end
+$var reg 3 7 func3_out [2:0] $end
+$var reg 5 8 r_reg1_out [4:0] $end
+$var reg 5 9 r_reg2_out [4:0] $end
+$var reg 5 : wr_reg_out [4:0] $end
+$var reg 7 ; func7_out [6:0] $end
+$var reg 7 < opcode_out [6:0] $end
+$var reg 8 > immediate_data_out [7:0] $end
+$var reg 8 U immediate_temp [7:0] $end
+$upscope $end
+
+
+$scope module dff $end
+$var wire 1 ) clk $end
+$var wire 1 * rst $end
+$var wire 7 < d [6:0] $end
+$var reg 7 = q [6:0] $end
+$upscope $end
+
+
+$scope module control_unit_inst $end
+$var wire 3 7 func3 [2:0] $end
+$var wire 7 ; func7 [6:0] $end
+$var wire 7 < opcode [6:0] $end
+$var reg 1 2 reg_wen $end
+$var reg 1 3 data_imm_sel $end
+$var reg 4 4 alu_op [3:0] $end
+$upscope $end
+
+
+$scope module reg_bank_inst $end
+$var wire 1 ) clk $end
+$var wire 1 @ w_en $end
+$var wire 5 8 r_reg1 [4:0] $end
+$var wire 5 9 r_reg2 [4:0] $end
+$var wire 5 A w_reg [4:0] $end
+$var wire 8 B w_data [7:0] $end
+$var wire 8 5 read_data1 [7:0] $end
+$var wire 8 6 read_data2 [7:0] $end
+$var wire 8 H output_data [7:0] $end
+$upscope $end
+
+
+$scope module data_forward_inst $end
+$var wire 5 8 r_reg1 [4:0] $end
+$var wire 5 9 r_reg2 [4:0] $end
+$var wire 5 A w_reg [4:0] $end
+$var reg 1 D op1_select $end
+$var reg 1 E op2_select $end
+$upscope $end
+
+
+$scope module op1_select_inst $end
+$var wire 1 D sel $end
+$var wire 8 5 i0 [7:0] $end
+$var wire 8 B i1 [7:0] $end
+$var wire 8 F mux_out [7:0] $end
+$upscope $end
+
+
+$scope module op2_select_inst $end
+$var wire 1 E sel $end
+$var wire 8 6 i0 [7:0] $end
+$var wire 8 B i1 [7:0] $end
+$var wire 8 G mux_out [7:0] $end
+$upscope $end
+
+
+$scope module data_store_sel_mux $end
+$var wire 1 3 sel $end
+$var wire 8 G i0 [7:0] $end
+$var wire 8 > i1 [7:0] $end
+$var wire 8 C mux_out [7:0] $end
+$upscope $end
+
+
+$scope module alu_output_sel_mux $end
+$var wire 1 V sel $end
+$var wire 8 B i0 [7:0] $end
+$var wire 8 H i1 [7:0] $end
+$var wire 8 . mux_out [7:0] $end
+$upscope $end
+
+
+$scope module alu_inst $end
+$var wire 4 4 alu_op [3:0] $end
+$var wire 8 F op1 [7:0] $end
+$var wire 8 C op2 [7:0] $end
+$var reg 8 ? out [7:0] $end
+$upscope $end
+
+
+$scope module writeback_stage_inst $end
+$var wire 1 ) clk $end
+$var wire 1 2 reg_wen $end
+$var wire 5 : wr_reg [4:0] $end
+$var wire 8 ? alu_result [7:0] $end
+$var reg 1 @ reg_wen_out $end
+$var reg 5 A wr_reg_out [4:0] $end
+$var reg 8 B alu_result_out [7:0] $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+
+$scope module uvm_pkg $end
+$var reg 32 W UVM_UNBOUNDED_CONNECTIONS [31:0] $end
+$var reg 1 X uvm_start_uvm_declarations $end
+$var time 64 Y setting_offset $end
+$var reg 32 Z setting_verbosity [31:0] $end
+$var reg 1 [ is_verdi_set_verbosity_called $end
+$var reg 32 \ uvm_global_random_seed [31:0] $end
+$var reg 1 ] is_uvm_factory_trace_checked $end
+$var reg 1 ^ is_verdi_trace_fac $end
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+1]
+0[
+0^
+1X
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Y
+b11111111111111111111111111111111 W
+b00000000000000000000000000000000 Z
+b01000010000001111100110001000111 \
+0!
+1"
+bxxxxxxxx '
+bxxxxxxx &
+bxxxxxxxx %
+xD
+xE
+x3
+x2
+x@
+xV
+xI
+bxxxx 4
+bxxxxxxxx B
+b0000000 /
+bxxx 7
+bxxxxxxx ;
+bxxxxxxx <
+bxxxxx 8
+bxxxxx 9
+bxxxxxxxx >
+bxxxxxxxx U
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 0
+bxxxxxxxx F
+bxxxxxxxx C
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 1
+b0000100 M
+b00000000 ?
+bxxxxxxxx H
+bxxxxxxx =
+bxxxxxxxx 5
+bxxxxxxxx 6
+bxxxxxxxx G
+bxxxxxxx K
+bxxx J
+bxxxxxxx L
+bxxxxxxxx T
+bxxxxx O
+bxxxxx P
+bxxxxx Q
+bxxx N
+bxxxxxxx R
+bxxxxxxx S
+bxxxxx :
+bxxxxx A
+0)
+1*
+bxxxxxxxx ,
+bxxxxxxx -
+bxxxxxxxx .
+x+
+0#
+1(
+x$
+$end
+0I
+#5
+1!
+1)
+1#
+b0000100 /
+b0001000 M
+b00000000 B
+#6
+1$
+1+
+b1110110 &
+b00010011 %
+b1110110 -
+b00010011 ,
+#10
+0!
+0)
+0#
+#15
+1!
+1)
+1#
+b0001000 /
+b0001100 M
+#16
+b1111011 &
+b00000011 %
+b1111011 -
+b00000011 ,
+#20
+0"
+0*
+0(
+0!
+0)
+0#
+b0000000 =
+0V
+b00000000 .
+b00000000 '
+#25
+1!
+1)
+1#
+b0000000 /
+b0000100 M
+#26
+b1001101 &
+b00100011 %
+b1001101 -
+b00100011 ,
+#30
+0!
+0)
+0#
+#35
+1!
+1)
+1#
+#36
+b1101110 &
+b01111111 %
+b1101110 -
+b01111111 ,
+#40
+0!
+0)
+0#
+#45
+1!
+1)
+1#
+#50
+0!
+0)
+0#
+#55
+1!
+1)
+1#
+#60
+0!
+0)
+0#
+#65
+1!
+1)
+1#
+#70
+0!
+0)
+0#
+#75
+1!
+1)
+1#
+#80
+0!
+0)
+0#
+#85
+1!
+1)
+1#
+#90
+0!
+0)
+0#
+#95
+1!
+1)
+1#
+#100
+0!
+0)
+0#
+#105
+1!
+1)
+1#
+#110
+0!
+0)
+0#
+#115
+1!
+1)
+1#
+#120
+0!
+0)
+0#
+#125
+1!
+1)
+1#
+#130
+0!
+0)
+0#
+#135
+1!
+1)
+1#
+#140
+0!
+0)
+0#
+#145
+1!
+1)
+1#
+#150
+0!
+0)
+0#
+#155
+1!
+1)
+1#
+#160
+0!
+0)
+0#
+#165
+1!
+1)
+1#
+#170
+0!
+0)
+0#
+#175
+1!
+1)
+1#
+#180
+0!
+0)
+0#
+#185
+1!
+1)
+1#
+#190
+0!
+0)
+0#
+#195
+1!
+1)
+1#
+#200
+0!
+0)
+0#
+#205
+1!
+1)
+1#
+#210
+0!
+0)
+0#
+#215
+1!
+1)
+1#
+#220
+0!
+0)
+0#
+#225
+1!
+1)
+1#
+#230
+0!
+0)
+0#
+#235
+1!
+1)
+1#
+#240
+0!
+0)
+0#
+#245
+1!
+1)
+1#
+#250
+0!
+0)
+0#
+#255
+1!
+1)
+1#
+#260
+0!
+0)
+0#
+#265
+1!
+1)
+1#
+#270
+0!
+0)
+0#
+#275
+1!
+1)
+1#
+#280
+0!
+0)
+0#
+#285
+1!
+1)
+1#
+#290
+0!
+0)
+0#
+#295
+1!
+1)
+1#
+#300
+0!
+0)
+0#
+#305
+1!
+1)
+1#
+#310
+0!
+0)
+0#
+#315
+1!
+1)
+1#
+#320
+0!
+0)
+0#
+#325
+1!
+1)
+1#
+#330
+0!
+0)
+0#
+#335
+1!
+1)
+1#
+#340
+0!
+0)
+0#
+#345
+1!
+1)
+1#
+#350
+0!
+0)
+0#
+#355
+1!
+1)
+1#
+#360
+0!
+0)
+0#
+#365
+1!
+1)
+1#
+#370
+0!
+0)
+0#
+#375
+1!
+1)
+1#
+#380
+0!
+0)
+0#
+#385
+1!
+1)
+1#
+#390
+0!
+0)
+0#
+#395
+1!
+1)
+1#
+#400
+0!
+0)
+0#
+#405
+1!
+1)
+1#
+#410
+0!
+0)
+0#
+#415
+1!
+1)
+1#
+#420
+0!
+0)
+0#
+#425
+1!
+1)
+1#
+#430
+0!
+0)
+0#
+#435
+1!
+1)
+1#
+#440
+0!
+0)
+0#
+#445
+1!
+1)
+1#
+#450
+0!
+0)
+0#
+#455
+1!
+1)
+1#
+#460
+0!
+0)
+0#
+#465
+1!
+1)
+1#
+#470
+0!
+0)
+0#
+#475
+1!
+1)
+1#
+#480
+0!
+0)
+0#
+#485
+1!
+1)
+1#
+#490
+0!
+0)
+0#
+#495
+1!
+1)
+1#
+#500
+0!
+0)
+0#
+#505
+1!
+1)
+1#
+#510
+0!
+0)
+0#
+#515
+1!
+1)
+1#
+#520
+0!
+0)
+0#
+#525
+1!
+1)
+1#
+#530
+0!
+0)
+0#
+#535
+1!
+1)
+1#
+#540
+0!
+0)
+0#
+#545
+1!
+1)
+1#
+#550
+0!
+0)
+0#
+#555
+1!
+1)
+1#
+#560
+0!
+0)
+0#
+#565
+1!
+1)
+1#
+#570
+0!
+0)
+0#
+#575
+1!
+1)
+1#
+#580
+0!
+0)
+0#
+#585
+1!
+1)
+1#
+#590
+0!
+0)
+0#
+#595
+1!
+1)
+1#
+#600
+0!
+0)
+0#
+#605
+1!
+1)
+1#
+#610
+0!
+0)
+0#
+#615
+1!
+1)
+1#
+#620
+0!
+0)
+0#
+#625
+1!
+1)
+1#
+#630
+0!
+0)
+0#
+#635
+1!
+1)
+1#
+#640
+0!
+0)
+0#
+#645
+1!
+1)
+1#
+#650
+0!
+0)
+0#
+#655
+1!
+1)
+1#
+#660
+0!
+0)
+0#
+#665
+1!
+1)
+1#
+#670
+0!
+0)
+0#
+#675
+1!
+1)
+1#
+#680
+0!
+0)
+0#
+#685
+1!
+1)
+1#
+#690
+0!
+0)
+0#
+#695
+1!
+1)
+1#
+#700
+0!
+0)
+0#
+#705
+1!
+1)
+1#
+#710
+0!
+0)
+0#
+#715
+1!
+1)
+1#
+#720
+0!
+0)
+0#
+#725
+1!
+1)
+1#
+#730
+0!
+0)
+0#
+#735
+1!
+1)
+1#
+#740
+0!
+0)
+0#
+#745
+1!
+1)
+1#
+#750
+0!
+0)
+0#
+#755
+1!
+1)
+1#
+#760
+0!
+0)
+0#
+#765
+1!
+1)
+1#
+#770
+0!
+0)
+0#
+#775
+1!
+1)
+1#
+#780
+0!
+0)
+0#
+#785
+1!
+1)
+1#
+#790
+0!
+0)
+0#
+#795
+1!
+1)
+1#
+#800
+0!
+0)
+0#
+#805
+1!
+1)
+1#
+#810
+0!
+0)
+0#
+#815
+1!
+1)
+1#
+#820
+0!
+0)
+0#
+#825
+1!
+1)
+1#
+#830
+0!
+0)
+0#
+#835
+1!
+1)
+1#
+#840
+0!
+0)
+0#
+#845
+1!
+1)
+1#
+#850
+0!
+0)
+0#
+#855
+1!
+1)
+1#
+#860
+0!
+0)
+0#
+#865
+1!
+1)
+1#
+#870
+0!
+0)
+0#
+#875
+1!
+1)
+1#
+#880
+0!
+0)
+0#
+#885
+1!
+1)
+1#
+#890
+0!
+0)
+0#
+#895
+1!
+1)
+1#
+#900
+0!
+0)
+0#
+#905
+1!
+1)
+1#
+#910
+0!
+0)
+0#
+#915
+1!
+1)
+1#
+#920
+0!
+0)
+0#
+#925
+1!
+1)
+1#
+#930
+0!
+0)
+0#
+#935
+1!
+1)
+1#
+#940
+0!
+0)
+0#
+#945
+1!
+1)
+1#
+#950
+0!
+0)
+0#
+#955
+1!
+1)
+1#
+#960
+0!
+0)
+0#
+#965
+1!
+1)
+1#
+#970
+0!
+0)
+0#
+#975
+1!
+1)
+1#
+#980
+0!
+0)
+0#
+#985
+1!
+1)
+1#
+#990
+0!
+0)
+0#
+#995
+1!
+1)
+1#
+#1000
+0!
+0)
+0#
+#1005
+1!
+1)
+1#
+#1010
+0!
+0)
+0#
+#1015
+1!
+1)
+1#
+#1020
+0!
+0)
+0#
+#1025
+1!
+1)
+1#
+#1030
+0!
+0)
+0#
+#1035
+1!
+1)
+1#
+#1040
+0!
+0)
+0#
+#1045
+1!
+1)
+1#

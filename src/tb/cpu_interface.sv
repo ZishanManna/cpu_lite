@@ -10,7 +10,6 @@ interface cpu_interface(input logic clk,input logic rst);
 		output pmWrEn;
 		output instructionIn;
 		output pm_addr;
-		input alu_result;	
 	endclocking
 
 	clocking mon_cb @(posedge clk);

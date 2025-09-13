@@ -23,7 +23,7 @@ class cpu_test extends uvm_test;
 	task run_phase(uvm_phase phase);
 		phase.raise_objection(this);
 		cpu_sequence_h.start(cpu_environment_h.cpu_active_agent_h.cpu_sequencer_h);
-	//	#1000;
+	#1000;
 		phase.drop_objection(this);
 	endtask	
 endclass

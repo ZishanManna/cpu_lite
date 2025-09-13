@@ -53,7 +53,7 @@ class cpu_scoreboard extends uvm_scoreboard;
                            item.alu_result, exp.alu_result))
     end
     else begin
-      `uvm_info("SCOREBOARD",
+      `uvm_info("---SCOREBOARD---",
                 $sformatf("MATCH! ALU RESULT = %0h", item.alu_result),
                 UVM_MEDIUM)
     end
