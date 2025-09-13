@@ -1,5 +1,6 @@
 `include "cpu_package.sv"
-
+//`include "../rtl/pipelined_risc_v_cpu.v"
+//`include "../rtl/cpu_rtl_package.v" 
 module cpu_top;
 
 	bit clk;

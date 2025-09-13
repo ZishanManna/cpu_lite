@@ -1,6 +1,6 @@
 `include "uvm_macros.svh"
 import uvm_pkg::*;
-parameter ADD_WIDTH = 4;
+parameter ADD_WIDTH = 7;
 
 `include "cpu_interface.sv"
 `include "cpu_sequence_item.sv"
@@ -14,3 +14,15 @@ parameter ADD_WIDTH = 4;
 `include "cpu_scoreboard.sv"
 `include "cpu_environment.sv"
 `include "cpu_test.sv"
+`include "../rtl/pipelined_risc_v_cpu.v"
+`include "../rtl/program_memory.v"
+`include "../rtl/program_counter.v"
+`include "../rtl/control_unit.v"
+`include "../rtl/d_ff.v"
+`include "../rtl/alu.v"
+`include "../rtl/data_forward.v"
+`include "../rtl/decode_stage.v"
+`include "../rtl/fetch_stage.v"
+`include "../rtl/mux_2_1.v"
+`include "../rtl/register_bank.v"
+`include "../rtl/writeback_stage.v"

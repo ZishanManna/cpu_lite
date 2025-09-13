@@ -7,7 +7,7 @@ class cpu_active_monitor extends uvm_monitor;
 	uvm_analysis_port#(cpu_sequence_item)in2scr;
 	uvm_analysis_port#(cpu_sequence_item)in2cov;
 
-	bit [31:0} byte_shift_reg;
+	bit [31:0] byte_shift_reg;
 	int byte_count;
 
 	function new(string name = "cpu_active_monitor",uvm_component parent);

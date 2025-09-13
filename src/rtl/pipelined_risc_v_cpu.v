@@ -1,3 +1,5 @@
+//`include "cpu_rtl_package.v"
+
 module pipelined_risc_v_cpu  #(
 	parameter 	DATA_WIDTH = 32,
 				ADD_WIDTH=7,

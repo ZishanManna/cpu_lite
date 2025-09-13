@@ -1,3 +1,6 @@
+`uvm_analysis_imp_decl(_out)
+
+
 class cpu_scoreboard extends uvm_scoreboard;
   `uvm_component_utils(cpu_scoreboard)
 

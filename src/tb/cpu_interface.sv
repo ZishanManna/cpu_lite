@@ -24,4 +24,4 @@ interface cpu_interface(input logic clk,input logic rst);
 	modport DRV(clocking dr_cb,input clk,rst);
 	modport MON(clocking mon_cb,input clk,rst);
 
-endclass
+endinterface

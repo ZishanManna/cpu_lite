@@ -20,9 +20,9 @@ class cpu_environment extends uvm_env;
 	function void connect_phase(uvm_phase phase);
 		super.connect_phase(phase);
 		cpu_active_agent_h.cpu_active_monitor_h.in2scr.connect(cpu_scoreboard_h.scr2in);
-		cpu_active_agent_h.cpu_active_monitor_h.in2cov.connect(cpu_scoreboard_h.cov2in);
+		//cpu_active_agent_h.cpu_active_monitor_h.in2cov.connect(cpu_scoreboard_h.cov2in);
 		cpu_passive_agent_h.cpu_passive_monitor_h.out2scr.connect(cpu_scoreboard_h.scr2out);
-		cpu_passive_agent_h.cpu_passive_monitor_h.out2cov.connect(cpu_scoreboard_h.cov2out);
+		//cpu_passive_agent_h.cpu_passive_monitor_h.out2cov.connect(cpu_scoreboard_h.cov2out);
 	endfunction
 
 endclass

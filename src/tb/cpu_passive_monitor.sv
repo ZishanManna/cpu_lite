@@ -16,7 +16,7 @@ class cpu_passive_monitor extends uvm_monitor;
 	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
 		if(!uvm_config_db#(virtual cpu_interface)::get(this,"","vif",vif))
-			`uvm_fatal("PASSIVE_MONITOR",VIF not set in passive monitor)	
+			`uvm_fatal("PASSIVE_MONITOR","VIF not set in passive monitor")	
 	endfunction
 
 	virtual task run_phase(uvm_phase phase);
@@ -26,8 +26,8 @@ class cpu_passive_monitor extends uvm_monitor;
 			repeat(3) @(posedge vif.clk);
 			item=cpu_sequence_item::type_id::create("item");
 			item.alu_result = vif.alu_result;
-			out2scr.write_out(item);
-			out2cov.write_out(item)
+			out2scr.write(item);
+			out2cov.write(item);
 		end
 	endtask
 
