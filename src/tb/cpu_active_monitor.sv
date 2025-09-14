@@ -20,7 +20,7 @@ class cpu_active_monitor extends uvm_monitor;
 
 	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
-		if(!uvm_config_db#(virtual cpu_interface)::get(this,"","vif",vif))
+		if(!uvm_config_db#(virtual cpu_interface)::get(this,"*","vif",vif))
 			`uvm_fatal("ACTIVE MONITOR","VIF not set in active monitor")
 	endfunction
 	
@@ -29,20 +29,23 @@ class cpu_active_monitor extends uvm_monitor;
 
 		forever begin
 			@(posedge vif.clk);
-			if(vif.pmWrEn) begin
-				byte_shift_reg[8*byte_count +: 8] = vif.instructionIn;
+
+			if(vif.mon_cb.pmWrEn) begin
+				byte_shift_reg[8*byte_count +: 8] = vif.mon_cb.instructionIn;
 				byte_count++;
 				
 				if(byte_count == 4) begin
 
 					item=cpu_sequence_item::type_id::create("item",this);
 	
-					item.pmWrEn       = vif.pmWrEn;
-					item.pm_addr      = vif.pm_addr-3;
+					item.pmWrEn       = vif.mon_cb.pmWrEn;
+					item.pm_addr      = vif.mon_cb.pm_addr-3;
 					item.instructionIn= byte_shift_reg;
 					in2scr.write(item);
 					in2cov.write(item);
+
 					`uvm_info("---ACTIVE_MONITOR---", $sformatf("Sampled transaction: pmWrEn=%0b, pm_addr=%0h, instruction=0x%08h",item.pmWrEn, item.pm_addr, item.instructionIn),UVM_MEDIUM)
+	
 				byte_shift_reg = 0;
 				byte_count     = 0;
 		
