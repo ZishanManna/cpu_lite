@@ -303,7 +303,7 @@ uvm-1.1
 cpu_top.sv
 /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/linux/lib/vcsdstub.tab
 44
-XDG_SESSION_ID=5523
+XDG_SESSION_ID=5716
 XDG_RUNTIME_DIR=/run/user/5250
 XDG_DATA_DIRS=/home/zishanmanna/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 VMR_MODE_FLAG=32
@@ -319,9 +319,9 @@ VCS_ARCH=linux
 VCS_AMD_PURE32=1
 UNAME=/bin/uname
 TOOL_HOME=/hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/linux
-SSH_TTY=/dev/pts/29
-SSH_CONNECTION=49.207.59.180 46612 192.168.1.10 22
-SSH_CLIENT=49.207.59.180 46612 22
+SSH_TTY=/dev/pts/0
+SSH_CONNECTION=49.207.59.180 46904 192.168.1.10 22
+SSH_CLIENT=49.207.59.180 46904 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SPYGLASS_HOME=/hwetools/synosys/installed_tools/spyglass/S-2021.09-SP1/SPYGLASS_HOME
 SNPSLMD_QUEUE=true
@@ -363,15 +363,15 @@ DC_HOME=/hwetools/synosys/installed_tools/syn/S-2021.06-SP4
 1757747290 ../rtl/pipelined_risc_v_cpu.v
 1757748458 cpu_test.sv
 1757745630 cpu_environment.sv
-1757748865 cpu_scoreboard.sv
+1757843583 cpu_scoreboard.sv
 1757744744 cpu_passive_agent.sv
-1757749270 cpu_passive_monitor.sv
+1757821985 cpu_passive_monitor.sv
 1757744744 cpu_active_agent.sv
-1757750469 cpu_active_monitor.sv
-1757748396 cpu_driver.sv
+1757842246 cpu_active_monitor.sv
+1757842736 cpu_driver.sv
 1757744744 cpu_sequencer.sv
 1757750770 cpu_sequence.sv
-1757744744 cpu_sequence_item.sv
+1757842587 cpu_sequence_item.sv
 1757749940 cpu_interface.sv
 1757747379 cpu_package.sv
 1631418292 /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/vcs/vcs_uvm_alt.sv
@@ -519,5 +519,5 @@ DC_HOME=/hwetools/synosys/installed_tools/syn/S-2021.06-SP4
 1631416737 /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/linux/lib/liberrorinf.so
 1631416709 /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/linux/lib/libsnpsmalloc.so
 1631416918 /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/linux/lib/libvfs.so
-1757750786 simv.daidir
+1757843600 simv.daidir
 -1 partitionlib

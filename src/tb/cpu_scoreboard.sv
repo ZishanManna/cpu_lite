@@ -1,11 +1,12 @@
+`uvm_analysis_imp_decl(_in)
 `uvm_analysis_imp_decl(_out)
 
 
 class cpu_scoreboard extends uvm_scoreboard;
   `uvm_component_utils(cpu_scoreboard)
 
-  uvm_analysis_imp #(cpu_sequence_item, cpu_scoreboard) scr2in;
-  uvm_analysis_imp #(cpu_sequence_item, cpu_scoreboard) scr2out;
+  uvm_analysis_imp_in #(cpu_sequence_item, cpu_scoreboard) scr2in;
+  uvm_analysis_imp_out #(cpu_sequence_item, cpu_scoreboard) scr2out;
 
   cpu_sequence_item exp_item_q[$];
 
@@ -21,18 +22,22 @@ class cpu_scoreboard extends uvm_scoreboard;
     pc = 0;
   endfunction
 
-  function void write(cpu_sequence_item item);
-    cpu_sequence_item exp;
-    exp = cpu_sequence_item::type_id::create("exp", this);
+  function void write_in(cpu_sequence_item item);
+	cpu_sequence_item exp;
+	logic [31:0] result;
 
-    exp.instructionIn = item.instructionIn;
-    exp.pm_addr       = item.pm_addr;
-    exp.pmWrEn        = item.pmWrEn;
+	exp = cpu_sequence_item::type_id::create("exp", this);
 
-    exp.alu_result    = ref_model(item.instructionIn);
+	exp.instructionIn = item.instructionIn;
+    	exp.pm_addr       = item.pm_addr;
+    	exp.pmWrEn        = item.pmWrEn;
 
-    exp_item_q.push_back(exp);
-    `uvm_info("SCOREBOARD",
+    	result		  = ref_model(item.instructionIn);
+	exp.alu_result    = result[7:0];
+
+    	exp_item_q.push_back(exp);
+
+    	`uvm_info("---SCOREBOARD---",
               $sformatf("Pushed expected result = %0h for instr = %0h",
                         exp.alu_result, exp.instructionIn), UVM_LOW)
   endfunction
@@ -41,14 +46,14 @@ class cpu_scoreboard extends uvm_scoreboard;
     cpu_sequence_item exp;
 
     if (exp_item_q.size() == 0) begin
-      `uvm_error("SCOREBOARD", "NO Expected Transaction available")
+      `uvm_error("---SCOREBOARD---", "NO Expected Transaction available")
       return;
     end
 
     exp = exp_item_q.pop_front();
 
     if (item.alu_result !== exp.alu_result) begin
-      `uvm_error("SCOREBOARD",
+      `uvm_error("---SCOREBOARD---",
                  $sformatf("MISMATCH! DUT = %0h, EXPECTED = %0h",
                            item.alu_result, exp.alu_result))
     end

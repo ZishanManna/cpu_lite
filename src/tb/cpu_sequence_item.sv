@@ -1,7 +1,7 @@
 class cpu_sequence_item extends uvm_sequence_item;
 
 	rand bit pmWrEn;
-	rand bit [7:0]instructionIn;
+	rand bit [31:0]instructionIn;
 	rand bit [ADD_WIDTH-1:0]pm_addr;
 	bit [7:0] alu_result;
 	
@@ -16,18 +16,10 @@ class cpu_sequence_item extends uvm_sequence_item;
 		super.new(name);
 	endfunction
 
-	constraint c1 {
-		if(pmWrEn == 0) instructionIn == 0;
-	}
-
 	constraint c2 {
 		pm_addr inside {[0:127]};
 	}
 
-	constraint c3 {
-		if(pmWrEn == 1) { instructionIn inside {
-				8'h03,8'h23,8'h33,8'h63,8'h13,8'h7F };
-				}
-	}
+
 endclass
 	
